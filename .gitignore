@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+
+# Uploaded images
+app/uploads/*
+!app/uploads/.gitkeep
+
+# Large model files
+models/*.pt
+models/*.pth
+*.pt
+*.pth
+
+# CSV-urile cu metrici
+!models/*.csv
+!models/model_comparison*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data
+data/
+*.zip

@@ -1,0 +1,6 @@
+Rank,Preprocessing Pipeline,Best Epoch,Precision,Recall,mAP50,mAP50-95,Box Loss,Class Loss,DFL Loss
+1,unprocessed_mlo,46,0.5651,0.4263,0.4631,0.2206,1.8358,1.8715,1.3416
+2,test_mlo,46,0.5704,0.3878,0.4477,0.1954,1.8512,1.7672,1.3696
+3,test2_mlo,53,0.5667,0.4176,0.4447,0.1874,1.7859,1.7797,1.302
+4,gaussian_clahe_mlo,46,0.4602,0.4455,0.4224,0.1877,1.872,1.8357,1.3689
+5,otsu_clahe_nlm_mlo,38,0.441,0.4006,0.3603,0.1521,1.8938,2.0756,1.4147
