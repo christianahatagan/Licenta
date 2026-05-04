@@ -26,7 +26,7 @@ to show how it can be processed by my algorithms and "Learn More" for showing so
 </p>
 
 If you scroll down, I've attached 3 different associations/campaign which everyone can donate to for the cause of breast cancer in Romania.
-The button "Donate" send you directly to their website's form to donate and you can also see there whatm those assocations/campaign consists
+The button "Donate" send you directly to their website's form to donate and you can also see there what those assocations/campaign consists
 of.
 
 <p align="center">
@@ -35,7 +35,7 @@ of.
   <em> Associations/Campains </em>
 </p>
 
-Comparative analysis of all 15 trained models across three mammography views (CC, MLO, CC+MLO) are shown here: The chart displays mAP50 scores for each preprocessing method, with the combined CC+MLO view achieving the highest detection accuracy.
+Comparative analysis of all 15 trained models across three mammography views (CC, MLO, CC+MLO) are shown here:
 
 <p align="center">
   <img src="images/model_comp1.png" width="800">
