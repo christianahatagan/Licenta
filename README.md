@@ -62,3 +62,7 @@ Not only you can upload a mamography to be preprocessed as the steps of each of 
 </p>
 
 In the end, there is also an "About" section in which I present my thesis, what I used and my best results. **Thank you!**
+
+<p align="center">
+  <img src="images/about.png" width="800">
+</p>
