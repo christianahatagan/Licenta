@@ -41,7 +41,7 @@ class Config:
             'gaussian_clahe': {'precision': 0.3369, 'recall': 0.46473, 'mAP50': 0.337},
             'otsu_clahe_nlm': {'precision': 0.34856, 'recall': 0.27244, 'mAP50': 0.22722},
             'test': {'precision': 0.33962, 'recall': 0.26923, 'mAP50': 0.24787},
-            'test2': {'precision': 0.41732, 'recall': 0.5, 'mAP50': 0.40105},
+            'test2': {'precision': 0.41732, 'recall': 0.5, 'mAP50': 0.40305},
             'unprocessed': {'precision': 0.41165, 'recall': 0.45373, 'mAP50': 0.40261}
         },
         'cc_mlo': {
