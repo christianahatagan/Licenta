@@ -1,0 +1,497 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MammoAI - Breast Cancer Detection System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="dark-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <i class="fas fa-heartbeat"></i> MammoAI
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#detection">Detection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#comparison">Model Comparison</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6">
+            <h1 class="hero-title">How much does the mammogram say?</h1>
+            <p class="hero-subtitle">
+              Advanced preprocessing techniques implemented on the CBIS-DDSM
+              dataset, combined with the powerful YOLOv8 architecture, to create
+              an AI-powered mammography detection system for further research
+              and development in early breast cancer mass detection.
+            </p>
+            <div class="hero-buttons">
+              <a href="#detection" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-search"></i> Start Detection
+              </a>
+              <a href="#stats" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-chart-line"></i> Learn More
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual">
+              <img
+                src="{{ url_for('static', filename='images/pink_ribbon.png') }}"
+                alt="Pink Ribbon"
+                class="hero-ribbon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <section id="stats" class="stats-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Breast Cancer Statistics</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="stat-card">
+              <i class="fas fa-users stat-icon"></i>
+              <h3 class="stat-number">2.3M</h3>
+              <p class="stat-label">New cases globally (2023)</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <i class="fas fa-heart-pulse stat-icon"></i>
+              <h3 class="stat-number">90%</h3>
+              <p class="stat-label">Survival rate when detected early</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <i class="fas fa-ribbon stat-icon"></i>
+              <h3 class="stat-number">1 in 8</h3>
+              <p class="stat-label">Women will develop breast cancer</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <i class="fas fa-calendar-check stat-icon"></i>
+              <h3 class="stat-number">October</h3>
+              <p class="stat-label">Breast Cancer Awareness Month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ngo" class="ngo-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">
+          Support Romanian Organizations
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="ngo-card">
+              <div class="ngo-logo">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h4>Fundația Renasterea</h4>
+              <p>
+                Supporting breast cancer patients in Romania through counseling
+                and financial aid
+              </p>
+              <a
+                href="https://fundatiarenasterea.ro/doneaza/"
+                target="_blank"
+                class="btn btn-donate"
+              >
+                <i class="fas fa-heart"></i> Donate
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ngo-card">
+              <div class="ngo-logo">
+                <i class="fas fa-ribbon"></i>
+              </div>
+              <h4>MovingOn</h4>
+              <p>
+                Association for breast cancer awareness and support through
+                wigs, prostheses, and psychological counseling
+              </p>
+              <a
+                href="https://movingon.ro/doneaza/"
+                target="_blank"
+                class="btn btn-donate"
+              >
+                <i class="fas fa-heart"></i> Donate
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ngo-card">
+              <div class="ngo-logo">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <h4>Help 25</h4>
+              <p>
+                Campain aimed at providing free screenings for women with low or
+                no income, medical education and equipment funding to hospitals
+                in need.
+              </p>
+              <a
+                href="http://help25.ro/doneaza/"
+                target="_blank"
+                class="btn btn-donate"
+              >
+                <i class="fas fa-heart"></i> Donate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="detection" class="detection-section">
+      <div class="container-fluid">
+        <h2 class="section-title text-center mb-5">AI Detection Tool</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card dark-card">
+              <div class="card-header">
+                <i class="fas fa-upload"></i> Upload & Settings
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="imageUpload" class="form-label"
+                    >Select Mammogram</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="imageUpload"
+                    accept=".png,.jpg,.jpeg,.dcm"
+                  />
+                  <small class="text-muted">PNG, JPG, JPEG, DICOM</small>
+                </div>
+                <div class="mb-3">
+                  <label for="methodSelect" class="form-label"
+                    >Preprocessing Method</label
+                  >
+                  <select class="form-select" id="methodSelect">
+                    {% for key, value in methods.items() %}
+                    <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <button
+                  class="btn btn-primary w-100 mb-2"
+                  id="uploadBtn"
+                  disabled
+                >
+                  <i class="fas fa-image"></i> Process Image
+                </button>
+                <button
+                  class="btn btn-success w-100 mb-2"
+                  id="detectBtn"
+                  disabled
+                >
+                  <i class="fas fa-search"></i> Run Detection
+                </button>
+                <button class="btn btn-secondary w-100" id="resetBtn">
+                  <i class="fas fa-redo"></i> Reset
+                </button>
+                <div
+                  class="mt-3 p-2 model-info-box"
+                  id="modelInfo"
+                  style="display: none"
+                >
+                  <small>
+                    <strong>Model:</strong> <span id="modelName"></span><br />
+                    <strong>Precision:</strong> <span id="modelPrecision"></span
+                    ><br />
+                    <strong>Recall:</strong> <span id="modelRecall"></span
+                    ><br />
+                    <strong>mAP50:</strong> <span id="modelMap"></span>
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="card dark-card mt-3">
+              <div class="card-header">
+                <i class="fas fa-info-circle"></i> Legend
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <div
+                    class="legend-malignant"
+                    style="width: 20px; height: 20px; margin-right: 10px"
+                  ></div>
+                  <span>Malignant</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="legend-benign"
+                    style="width: 20px; height: 20px; margin-right: 10px"
+                  ></div>
+                  <span>Benign</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div
+              class="card dark-card mb-3"
+              id="stepsCard"
+              style="display: none"
+            >
+              <div class="card-header">
+                <i class="fas fa-tasks"></i> Preprocessing Steps
+              </div>
+              <div class="card-body">
+                <div class="row" id="stepsContainer"></div>
+              </div>
+            </div>
+            <div class="card dark-card">
+              <div class="card-header">
+                <i class="fas fa-image"></i>
+                <span id="imageTitle">Detection Result</span>
+              </div>
+              <div class="card-body text-center">
+                <div id="imageContainer">
+                  <div class="placeholder-image">
+                    <i class="fas fa-file-medical fa-5x"></i>
+                    <p class="mt-3">Upload an image to begin</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card dark-card mt-3"
+              id="resultsCard"
+              style="display: none"
+            >
+              <div class="card-header">
+                <i class="fas fa-clipboard-list"></i> Detection Results
+              </div>
+              <div class="card-body">
+                <h5>
+                  Detected Objects:
+                  <span id="detectionCount" class="badge bg-primary">0</span>
+                </h5>
+                <div id="detectionList" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison" class="comparison-section">
+      <div class="container-fluid">
+        <h2 class="section-title text-center mb-5">
+          Model Performance Comparison
+        </h2>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card dark-card mb-3">
+              <div class="card-header">
+                <i class="fas fa-chart-bar"></i> Performance Overview
+              </div>
+              <div class="card-body">
+                <canvas id="comparisonChart" style="max-height: 400px"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card dark-card">
+              <div class="card-header">CC View Models</div>
+              <div
+                class="card-body"
+                style="max-height: 400px; overflow-y: auto"
+              >
+                <table class="table table-dark table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>mAP50</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ccTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card dark-card">
+              <div class="card-header">MLO View Models</div>
+              <div
+                class="card-body"
+                style="max-height: 400px; overflow-y: auto"
+              >
+                <table class="table table-dark table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>mAP50</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                    </tr>
+                  </thead>
+                  <tbody id="mloTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card dark-card">
+              <div class="card-header">CC+MLO View Models</div>
+              <div
+                class="card-body"
+                style="max-height: 400px; overflow-y: auto"
+              >
+                <table class="table table-dark table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>mAP50</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ccMloTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">About This Project</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="card dark-card">
+              <div class="card-body p-5">
+                <h4>Bachelor Thesis 2026</h4>
+                <p class="lead">
+                  My name is Hățăgan Maria-Christiana and I've developed my
+                  thesis project on helping further researches on how important
+                  is the preprocessing of scanned mammographies. Many romanian
+                  towns have dealed with the problem of lack of medical staff
+                  and modern equipment, and this is a problem that can be
+                  partially solved by the help of AI. The main goal of this
+                  project is to help at first with the preprocessing of
+                  handscaned mammographies, and then to create a detection
+                  system that can be used for further research on the topic of
+                  breast cancer mass detection.
+                </p>
+                <hr class="my-4" />
+                <h5>Technology Stack</h5>
+                <ul>
+                  <li><strong>Deep Learning:</strong> YOLOv8 (Ultralytics)</li>
+                  <li>
+                    <strong>Dataset:</strong> CBIS-DDSM Mammography Database
+                  </li>
+                  <li>
+                    <strong>Preprocessing:</strong> 5 methods (Gaussian+CLAHE,
+                    Otsu+NLM, etc.)
+                  </li>
+                  <li><strong>Backend:</strong> Flask + OpenCV + NumPy</li>
+                  <li><strong>Frontend:</strong> Bootstrap 5 + Chart.js</li>
+                </ul>
+                <hr class="my-4" />
+                <h5>Model Performance</h5>
+                <p>
+                  Best performing model:
+                  <strong>CC+MLO View with Test method</strong>
+                </p>
+                <ul>
+                  <li>mAP50: 0.4484</li>
+                  <li>Precision: 0.4750</li>
+                  <li>Recall: 0.4806</li>
+                </ul>
+                <hr class="my-4" />
+                <p class="text-muted small">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  This is a research project for educational purposes. Not
+                  intended for clinical diagnosis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2026 MammoAI - Bachelor Thesis Project</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="#home" class="footer-link">Back to Top</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="loadingSpinner" class="spinner-overlay" style="display: none">
+      <div
+        class="spinner-border text-primary"
+        role="status"
+        style="width: 3rem; height: 3rem"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="text-white mt-3">Processing...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
