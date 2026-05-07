@@ -17,6 +17,7 @@ pip install -r requirements.txt
 And for running: 
 \```
 cd app
+
 python app.py\``` 
 
 ## **How it looks**
