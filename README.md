@@ -14,6 +14,11 @@ cd repo
 pip install -r requirements.txt
 \```
 
+And for running: 
+\```
+cd app
+python app.py\``` 
+
 ## **How it looks**
 
 The website is simple and starts with what it does, a button "Start Detection" that scrolls until the part where you can upload an image
