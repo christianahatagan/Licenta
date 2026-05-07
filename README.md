@@ -15,6 +15,7 @@ pip install -r requirements.txt
 \```
 
 And for running: 
+
 \```
 cd app
 
